@@ -51,7 +51,7 @@ async function gsrun(client,id)
 {
     const gsapi = google.sheets({version: "v4" , auth: client});
     const opt = {
-        spreadsheetId : '1IjBrp6d8OudkPffgrPNGnc5sAOC4-GXUnWX-_jx_rUk',
+        spreadsheetId : '1jshMK4G-8IojtMwcmBJeACVutSTIeTKBHE9ER1XvRiU',
         range: 'Data'
     };
     // range: 'Data!A2:B5'
@@ -77,8 +77,8 @@ async function gsrun(client,id)
         // index++;
         // console.log(index);
         const opt2 = {
-            spreadsheetId : '1IjBrp6d8OudkPffgrPNGnc5sAOC4-GXUnWX-_jx_rUk',
-            range: 'Form Responses 1'
+            spreadsheetId : '1jshMK4G-8IojtMwcmBJeACVutSTIeTKBHE9ER1XvRiU',
+            range: 'Responses'
         };
         let info = await gsapi.spreadsheets.values.get(opt2);
         let dataArray = info.data.values;
@@ -93,8 +93,8 @@ async function gsrun(client,id)
 
         // let infoArray = [dataArray[index][0],dataArray[index][1]];
         let infoObj = {
-            'name' : dataArray[index][3],
-            'email': dataArray[index][1]
+            'name' : dataArray[index][2],
+            'email': dataArray[index][0]
         };
         // console.log(infoObj);
         return infoObj;
